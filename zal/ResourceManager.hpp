@@ -7,10 +7,11 @@ class ResourceManager
     public:
     ResourceManager(){}
 
-    ResourceManager(const ResourceManager& rm) {}
+    ResourceManager(const ResourceManager& rm): r.get(){rm.get()} {}
     
     ResourceManager& operator=(ResourceManager& rm)
     {
+      r.get()=rm.get();
       return *this;
     }
 
