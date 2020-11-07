@@ -1,7 +1,8 @@
 #include <iostream>
 
-struct Wektor
+class Wektor
 {
+public:
     Wektor(int n) : dlugosc{n}
     {
         wektor = new double[n];
@@ -89,7 +90,6 @@ struct Wektor
 private:
     double* wektor;
 
-private:
     int dlugosc;
     int pojemnosc;
 };
@@ -99,7 +99,5 @@ int main()
     Wektor a{8};
     a.zmienDlugosc(10);
     Wektor c{10};
-
-    Wektor b(std::move(a));
-    b.print(10);
+    c.print(10);
 }

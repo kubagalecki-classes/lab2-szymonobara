@@ -4,7 +4,7 @@
 
 class ResourceManager
 {
-    Public:
+    public:
     ResourceManager(){}
 
     ResourceManager(const ResourceManager& rm): get(){rm.get()} {}
@@ -24,7 +24,7 @@ class ResourceManager
     }
 
     ~ResourceManager(){}
-    
+
     double get(){return Resource.get();}
 
 };
