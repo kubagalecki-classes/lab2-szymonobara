@@ -9,27 +9,23 @@ class ResourceManager
 
     ResourceManager(const ResourceManager& rm) {}
     
-      
-    
     ResourceManager& operator=(ResourceManager& rm)
     {
-      
       return *this;
     }
 
     ResourceManager(ResourceManager&& rm) {}
     
-      
-    
     ResourceManager& operator=(ResourceManager&& rm)
     {
-        
         return *this;
     }
 
     ~ResourceManager(){}
 
-    double get(){return Resource::get();}
+    Resource r;
+
+    double get(){return r.get();}
 
 
 };
