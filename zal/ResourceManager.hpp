@@ -34,7 +34,7 @@ public:
 	ResourceManager(ResourceManager&& rm) 
 	{
 		r = rm.r;
-		delete rm.r;
+		rm.r = nullptr;
 	}
 
 	ResourceManager& operator=(ResourceManager&& rm)
@@ -43,8 +43,9 @@ public:
 		{
 			return *this;
 		}
+		delete r;
 		r = rm.r;
-		delete rm.r;
+		rm.r = nullptr;
 		return *this;
 	}
 
