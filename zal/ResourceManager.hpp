@@ -24,6 +24,7 @@ public:
 		{
 			return *this;
 		}
+    delete r;
 		Resource *r1 = new Resource;
 		*r1 = *(rm.r);
 		r = r1;
