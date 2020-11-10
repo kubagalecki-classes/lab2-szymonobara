@@ -14,7 +14,7 @@ public:
 	ResourceManager(const ResourceManager& rm)
 	{
 		Resource *r1 = new Resource;
-		r1 = rm.r;
+		*r1 = *(rm.r);
 		r = r1;
 	}
 
@@ -24,9 +24,8 @@ public:
 		{
 			return *this;
 		}
-		delete r;
 		Resource *r1 = new Resource;
-		r1 = rm.r;
+		*r1 = *(rm.r);
 		r = r1;
 		return *this;
 	}
