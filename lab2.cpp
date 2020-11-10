@@ -25,7 +25,7 @@ public:
     }
     Wektor& operator=(Wektor&& wek1)
     {
-        
+
         for (int i = 0; i < dlugosc; i++)
             wektor[i] = std::move(wek1[i]);
         return *this;

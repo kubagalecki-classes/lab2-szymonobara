@@ -8,7 +8,7 @@ class ResourceManager
 	ResourceManager()
 	{
 		Resource *r1 = new Resource;
-		r = r1;
+		r1 = r;
 	}
 
 	ResourceManager(const ResourceManager& rm)
