@@ -4,11 +4,11 @@
 
 class ResourceManager
 {
-    public:
+public:
 	ResourceManager()
 	{
 		Resource *r1 = new Resource;
-		r1 = r;
+		r = r1;
 	}
 
 	ResourceManager(const ResourceManager& rm)
@@ -31,10 +31,20 @@ class ResourceManager
 		return *this;
 	}
 
-	ResourceManager(ResourceManager&& rm) {}
+	ResourceManager(ResourceManager&& rm) 
+	{
+		r = rm.r;
+		rm.r = nullptr;
+	}
 
 	ResourceManager& operator=(ResourceManager&& rm)
 	{
+		if (&rm == this)
+		{
+			return *this;
+		}
+		r = rm.r;
+		rm.r = nullptr;
 		return *this;
 	}
 
